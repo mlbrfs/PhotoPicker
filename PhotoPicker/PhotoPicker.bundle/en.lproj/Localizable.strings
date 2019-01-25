@@ -1,0 +1,16 @@
+"Cancel" = "Cancel";
+"Finish" = "Done";
+"ChoosePicture" = "ChoosePicture";
+"PhotoAlbum" = "PhotoAlbum";
+"Camera" = "Camera";
+"Sure" = "Done";
+"LocalAlbumEmpty" = "There are no photos in the album.";
+"LocalAlbumReject" = "Allow Application to access your album in\n'Settings'->'Privacy'->'Photos'";
+"WaitAuthorization" = "Allow Application to access your album in\n'Settings'->'Privacy'->'Photos'";
+"ExceededImagesaAvailable" = "The maximum number of images has been exceeded";
+"CameraReject" = "Allow Application to access your camera and microphone on\n'Settings'->'Privacy' on your iPhone";
+"CameraDisable" = "Camera or microphone is disable";
+"Preview" = "Preview";
+"RecordingFailed" = "Recording failed. Please try again";
+"LessThanRecordTime" = "Record must not be less than";
+"Second" = "second";
