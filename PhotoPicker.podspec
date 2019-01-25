@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.homepage     = "https://github.com/121372288/PhotoPicker"
 
-  s.license      = { :type => "MIT", :file => "LICENSE" }
+  s.license      = "MIT"
 
   s.author             = { "121372288" => "121372288@qq.com" }
 
