@@ -15,7 +15,6 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.white
-        
     }
 
     var dataSources = items
@@ -45,7 +44,7 @@ extension ViewController {
             case 0:
                 cell.backgroundColor = UIColor.magenta
             case 1:
-                cell.backgroundColor = UIColor.white
+                cell.backgroundColor = UIColor.red
             default: break
             }
         default: break
@@ -154,6 +153,38 @@ extension ViewController {
                 }
             default: break
             }
+        case 2:
+            switch indexPath.row {
+            case 0:
+                PhotoPickerManager.shared.showCamera(viewController: self) { (info) in
+                    let originalImages = info.map({
+                        return $0[.originalImage] as! UIImage
+                    })
+                    self.navigationController?.pushViewController(DetailViewController(images: originalImages), animated: true)
+                }
+            case 1:
+                PhotoPickerManager.shared.showCamera(viewController: self, options: [PhotoPickerOptionsItem.allowType(.onlyVideo)]) { (info) in
+                    let originalImages = info.map({
+                        return $0[.originalImage] as! UIImage
+                    })
+                    self.navigationController?.pushViewController(DetailViewController(images: originalImages), animated: true)
+                }
+            case 2:
+                PhotoPickerManager.shared.showCamera(viewController: self, options: [PhotoPickerOptionsItem.allowType(.onlyPhoto)]) { (info) in
+                    let originalImages = info.map({
+                        return $0[.originalImage] as! UIImage
+                    })
+                    self.navigationController?.pushViewController(DetailViewController(images: originalImages), animated: true)
+                }
+            case 3:
+                PhotoPickerManager.shared.showCamera(viewController: self, options: [PhotoPickerOptionsItem.allowVideoSize(min: 3, max: 15)]) { (info) in
+                    let originalImages = info.map({
+                        return $0[.originalImage] as! UIImage
+                    })
+                    self.navigationController?.pushViewController(DetailViewController(images: originalImages), animated: true)
+                }
+            default: break
+            }
         default: break
         }
     }
@@ -176,9 +207,10 @@ var items: [(header: String, items: [String])] {
         "可选图片数修改为3个"
         ])
     let item_2 = (header: "相机拍照选择", items: [
-        "图片+视频选择 (默认)",
-        "视频选择",
-        "图片选择"
+        "图片+视频 (默认)",
+        "视频",
+        "图片",
+        "允许拍摄的时长修改为 3到15秒 "
         ])
     return [item_0, item_1, item_2]
     

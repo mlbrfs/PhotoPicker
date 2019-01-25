@@ -31,6 +31,7 @@
 		A21827C321F5A62400B3D479 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21827C221F5A62400B3D479 /* TopBar.swift */; };
 		A21827C521F5B60B00B3D479 /* PhotoPreviewViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21827C421F5B60B00B3D479 /* PhotoPreviewViewCell.swift */; };
 		A297CABD21FB0A7A00DB1A91 /* CameraViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A297CABC21FB0A7A00DB1A91 /* CameraViewButton.swift */; };
+		A297CAC021FB1A7200DB1A91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A297CABF21FB1A7200DB1A91 /* LaunchScreen.storyboard */; };
 		A2E7F28221F8030100857D62 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7F28121F8030100857D62 /* DetailViewController.swift */; };
 		A2E7F28421F80FB700857D62 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7F28321F80FB700857D62 /* AlertManager.swift */; };
 		A2E7F28621F81C7A00857D62 /* LocalizableString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E7F28521F81C7A00857D62 /* LocalizableString.swift */; };
@@ -88,6 +89,7 @@
 		A21827C221F5A62400B3D479 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		A21827C421F5B60B00B3D479 /* PhotoPreviewViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewViewCell.swift; sourceTree = "<group>"; };
 		A297CABC21FB0A7A00DB1A91 /* CameraViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewButton.swift; sourceTree = "<group>"; };
+		A297CABF21FB1A7200DB1A91 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2E7F28121F8030100857D62 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A2E7F28321F80FB700857D62 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		A2E7F28521F81C7A00857D62 /* LocalizableString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableString.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				A218274321F02C5E00B3D479 /* AppDelegate.swift */,
+				A297CABF21FB1A7200DB1A91 /* LaunchScreen.storyboard */,
 				A218274521F02C5E00B3D479 /* ViewController.swift */,
 				A2E7F28121F8030100857D62 /* DetailViewController.swift */,
 				A218274A21F02C5E00B3D479 /* Assets.xcassets */,
@@ -316,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A218274B21F02C5E00B3D479 /* Assets.xcassets in Resources */,
+				A297CAC021FB1A7200DB1A91 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,7 +503,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C8TM74AHWM;
 				INFOPLIST_FILE = PhotoPickerDemo/Info.plist;
@@ -520,7 +523,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C8TM74AHWM;
 				INFOPLIST_FILE = PhotoPickerDemo/Info.plist;
