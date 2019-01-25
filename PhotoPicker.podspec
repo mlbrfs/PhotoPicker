@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/121372288/PhotoPicker.git", :tag => "0.4.2.0" }
 
-  s.source_files  = ["PhotoPicker/*", "LICENSE"] 
+  s.source_files  = "PhotoPicker/*"
 
   s.frameworks  = "UIKit", "Foundation", "Photos", "AVFoundation", "AVKit"
 
