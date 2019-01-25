@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.homepage     = "https://github.com/121372288/PhotoPicker"
 
-  s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.license      = { :type => "MIT", :file => "LICENSE" }
 
   s.author             = { "121372288" => "121372288@qq.com" }
 
@@ -23,8 +23,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/121372288/PhotoPicker.git", :tag => "0.4.2.0" }
 
-  s.source_files  = "PhotoPicker/*"
-  s.exclude_files = "Classes/Exclude"
+  s.source_files  = ["PhotoPicker/*", "LICENSE"] 
 
   s.frameworks  = "UIKit", "Foundation", "Photos", "AVFoundation", "AVKit"
 
