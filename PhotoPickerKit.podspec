@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "PhotoPickerKit"
-  s.version      = "0.4.2.2"
+  s.version      = "0.4.2.3"
   s.summary      = "Image selector"
 
   s.description  = <<-DESC
@@ -21,13 +21,13 @@ Pod::Spec.new do |s|
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.0"
 
-  s.source       = { :git => "https://github.com/121372288/PhotoPicker.git", :tag => "0.4.2.0" }
+  s.source       = { :git => "https://github.com/121372288/PhotoPicker.git", :tag => s.version }
 
   s.swift_version = "4.2"
 
-  # s.source_files  = ["PhotoPicker/**/*.swift", "PhotoPicker/*.swift"]
+  s.source_files  = ["PhotoPicker/**/*.swift", "PhotoPicker/*.swift"]
   # s.public_header_files = ["PhotoPicker/PhotoPicker.h"]
-  s.exclude_files = "PhotoPicker/Info.plist"
+  # s.exclude_files = "PhotoPicker/Info.plist"
   s.resource     = 'PhotoPicker/PhotoPicker.bundle'
 
   s.frameworks  = "UIKit", "Foundation", "Photos", "AVFoundation", "AVKit"
