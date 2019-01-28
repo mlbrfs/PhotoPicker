@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
 
-  s.name         = "PhotoPickerKit"
-  s.version      = "0.4.2.3"
-  s.summary      = "Image selector"
+  s.name         = "PhotoPicker"
+  s.version      = "0.4.2.0"
+  s.summary      = "A short description of PhotoPicker."
 
   s.description  = <<-DESC
 		   Image selector with swift (iPhone and iPad) for swift4.2
@@ -16,19 +16,17 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
 
-  # s.ios.deployment_target = "10.0"
+  s.ios.deployment_target = "10.0"
   # s.osx.deployment_target = "10.7"
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.0"
 
-  s.source       = { :git => "https://github.com/121372288/PhotoPicker.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/121372288/PhotoPicker.git", :tag => "0.4.2.0" }
 
   s.swift_version = "4.2"
 
-  s.source_files  = ["PhotoPicker/**/*.swift", "PhotoPicker/*.swift"]
-  # s.public_header_files = ["PhotoPicker/PhotoPicker.h"]
-  # s.exclude_files = "PhotoPicker/Info.plist"
-  s.resource     = 'PhotoPicker/PhotoPicker.bundle'
+  s.source_files  = ["PhotoPicker/*"]
+  s.public_header_files = ["PhotoPicker/PhotoPicker.h"]
 
   s.frameworks  = "UIKit", "Foundation", "Photos", "AVFoundation", "AVKit"
 

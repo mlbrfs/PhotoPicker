@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D5D265021FC193600FA7494 /* PhotoPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D5D264F21FC193600FA7494 /* PhotoPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A218274421F02C5E00B3D479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A218274321F02C5E00B3D479 /* AppDelegate.swift */; };
 		A218274621F02C5E00B3D479 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A218274521F02C5E00B3D479 /* ViewController.swift */; };
 		A218274B21F02C5E00B3D479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A218274A21F02C5E00B3D479 /* Assets.xcassets */; };
-		A218277021F02CDE00B3D479 /* PhotoPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = A218276E21F02CDE00B3D479 /* PhotoPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A218277321F02CDE00B3D479 /* PhotoPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A218276C21F02CDE00B3D479 /* PhotoPicker.framework */; };
 		A218277421F02CDE00B3D479 /* PhotoPicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A218276C21F02CDE00B3D479 /* PhotoPicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A218277A21F02D6300B3D479 /* PhotoPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A218277921F02D6300B3D479 /* PhotoPicker.bundle */; };
@@ -63,13 +63,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6D5D264F21FC193600FA7494 /* PhotoPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPicker.h; sourceTree = "<group>"; };
 		A218274021F02C5E00B3D479 /* PhotoPickerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoPickerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A218274321F02C5E00B3D479 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A218274521F02C5E00B3D479 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A218274A21F02C5E00B3D479 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A218274F21F02C5E00B3D479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A218276C21F02CDE00B3D479 /* PhotoPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhotoPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A218276E21F02CDE00B3D479 /* PhotoPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoPicker.h; sourceTree = "<group>"; };
 		A218276F21F02CDE00B3D479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A218277921F02D6300B3D479 /* PhotoPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PhotoPicker.bundle; sourceTree = "<group>"; };
 		A21827A521F060C000B3D479 /* PhotoPickerConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerConst.swift; sourceTree = "<group>"; };
@@ -164,10 +164,10 @@
 		A218277821F02D2400B3D479 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6D5D264F21FC193600FA7494 /* PhotoPicker.h */,
 				A2E7F28521F81C7A00857D62 /* LocalizableString.swift */,
 				A218277921F02D6300B3D479 /* PhotoPicker.bundle */,
 				A218276F21F02CDE00B3D479 /* Info.plist */,
-				A218276E21F02CDE00B3D479 /* PhotoPicker.h */,
 				A21827A521F060C000B3D479 /* PhotoPickerConst.swift */,
 				A21827B921F1B3BD00B3D479 /* Then.swift */,
 			);
@@ -231,7 +231,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A218277021F02CDE00B3D479 /* PhotoPicker.h in Headers */,
+				6D5D265021FC193600FA7494 /* PhotoPicker.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
