@@ -26,7 +26,7 @@ PhotoPickerManager.shared.selectImage(viewController: self) { infos in
 }
 ```
 <p align="center">
-<img src="https://github.com/121372288/PhotoPicker/blob/master/images/PhotoPicker-1.jpg" alt="PhotoPickerKit" title="PhotoPickerKit" width="557"/>
+<img src="https://github.com/121372288/PhotoPicker/blob/master/images/photoPicker-1.jpg" alt="PhotoPickerKit" title="PhotoPickerKit" width="357"/>
 </p>
 
 或者你只需要使用相册时：
