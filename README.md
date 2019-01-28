@@ -92,3 +92,16 @@ public static let phAsset: PhotoPickerManager.InfoKey  // a PHAsset 相册选择
 ```
 拿到内容可以只使用原图或者缩略图。如果是视频类型，那么图片就是当前视频的封面
 
+## Warning
+
+使用时 一定要在项目App  Info.plist中添加对应权限的描述 否则必然会出现闪退！
+
+Privacy - Camera Usage Description // 相机权限
+Privacy - Photo Library Usage Description  // 相册权限
+Privacy - Microphone Usage Description // 麦克风权限  - 拍摄时用到
+
+
+
+
+
+
