@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/121372288/PhotoPicker/images/logo.jpg" alt="PhotoPickerKit" title="PhotoPickerKit" width="557"/>
+<img src="https://github.com/121372288/PhotoPicker/blob/master/images/logo.jpg" alt="PhotoPickerKit" title="PhotoPickerKit" width="557"/>
 </p>
 
 PhotoPickerKit 是专门用于图片选择的选择器，支持相册选择，拍照，摄像等等。它提供了便捷的选择图片的方式，如果你想要的是图片选择器，那么PhotoPickerKit是你不二的选择。
@@ -26,7 +26,7 @@ PhotoPickerManager.shared.selectImage(viewController: self) { infos in
 }
 ```
 <p align="center">
-<img src="https://github.com/121372288/PhotoPicker/images/PhotoPicker-1.jpg" alt="PhotoPickerKit" title="PhotoPickerKit" width="557"/>
+<img src="https://github.com/121372288/PhotoPicker/blob/master/images/PhotoPicker-1.jpg" alt="PhotoPickerKit" title="PhotoPickerKit" width="557"/>
 </p>
 
 或者你只需要使用相册时：
