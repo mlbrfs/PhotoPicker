@@ -64,6 +64,7 @@
 
 /* Begin PBXFileReference section */
 		6D5D264F21FC193600FA7494 /* PhotoPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoPicker.h; sourceTree = "<group>"; };
+		A215CBF521FED479002C4385 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		A218274021F02C5E00B3D479 /* PhotoPickerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoPickerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A218274321F02C5E00B3D479 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A218274521F02C5E00B3D479 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +142,7 @@
 				A218274521F02C5E00B3D479 /* ViewController.swift */,
 				A2E7F28121F8030100857D62 /* DetailViewController.swift */,
 				A218274A21F02C5E00B3D479 /* Assets.xcassets */,
+				A215CBF521FED479002C4385 /* README.md */,
 				A218274F21F02C5E00B3D479 /* Info.plist */,
 			);
 			path = PhotoPickerDemo;

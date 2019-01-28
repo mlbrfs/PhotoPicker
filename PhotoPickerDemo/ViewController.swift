@@ -15,6 +15,18 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.white
+        
+        PhotoPickerManager.shared.showLibrary(viewController: self, options: [
+            .allowType(.onlyPhoto),
+            .barColor(UIColor.blue),
+            .tintColor(UIColor.red),
+            .photoIndicatorStyle(.square),
+            .photoIndicatorPosition(.topLeft),
+            .optionsAllowed(3)
+            ]) { (infos) in
+                
+        }
+        
     }
 
     var dataSources = items
@@ -133,6 +145,20 @@ extension ViewController {
                     self.navigationController?.pushViewController(DetailViewController(images: originalImages), animated: true)
                 }
             case 4:
+                PhotoPickerManager.shared.showLibrary(viewController: self, options: [.photoIndicatorStyle(.star)]) { info in
+                    let originalImages = info.map({
+                        return $0[.originalImage] as! UIImage
+                    })
+                    self.navigationController?.pushViewController(DetailViewController(images: originalImages), animated: true)
+                }
+            case 5:
+                PhotoPickerManager.shared.showLibrary(viewController: self, options: [.photoIndicatorStyle(.heart)]) { info in
+                    let originalImages = info.map({
+                        return $0[.originalImage] as! UIImage
+                    })
+                    self.navigationController?.pushViewController(DetailViewController(images: originalImages), animated: true)
+                }
+            case 6:
                 PhotoPickerManager.shared.showLibrary(viewController: self, options: [
                     .photoIndicatorStyle(.rectangle),
                     .photoIndicatorPosition(.bottomRight)
@@ -142,7 +168,7 @@ extension ViewController {
                     })
                     self.navigationController?.pushViewController(DetailViewController(images: originalImages), animated: true)
                 }
-            case 5:
+            case 7:
                 PhotoPickerManager.shared.showLibrary(viewController: self, options: [
                     .optionsAllowed(3),
                 ]) { info in
@@ -201,8 +227,10 @@ var items: [(header: String, items: [String])] {
     let item_1 = (header: "相册选择", items: [
         "背景变化(紫色导航)",
         "主题变化(白色导航、红色主题，黑色文字)",
-        "图片选择按钮位置变化",
-        "图片选择按钮类型变化(左上)",
+        "图片选择按钮位置变化(左上)",
+        "图片选择按钮类型变化（三角）",
+        "图片选择按钮类型变化（星星）",
+        "图片选择按钮类型变化（爱心）",
         "图片选择按钮类型/位置都有变化（长条/右下角）",
         "可选图片数修改为3个"
         ])

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "PhotoPickerKit"
-  s.version      = "0.4.2.3"
+  s.version      = "0.4.2.4"
   s.summary      = "Image selector"
 
   s.description  = <<-DESC
@@ -25,8 +25,8 @@ Pod::Spec.new do |s|
 
   s.swift_version = "4.2"
 
-  s.source_files  = ["PhotoPicker/**/*.swift", "PhotoPicker/*.swift"]
-  # s.public_header_files = ["PhotoPicker/PhotoPicker.h"]
+  s.source_files  = ["PhotoPicker/**/*.swift", "PhotoPicker/*.swift", "PhotoPicker/PhotoPicker.h"]
+  s.public_header_files = ["PhotoPicker/PhotoPicker.h"]
   # s.exclude_files = "PhotoPicker/Info.plist"
   s.resource     = 'PhotoPicker/PhotoPicker.bundle'
 
