@@ -539,13 +539,13 @@ public enum BorderAlignment {
 }
 
 public extension UIImage {
-    public typealias ContextBlock = (CGContext) -> Void
+    typealias ContextBlock = (CGContext) -> Void
     
-    public class func with(width: CGFloat, height: CGFloat, block: ContextBlock) -> UIImage {
+    class func with(width: CGFloat, height: CGFloat, block: ContextBlock) -> UIImage {
         return self.with(size: CGSize(width: width, height: height), block: block)
     }
     
-    public class func with(size: CGSize, opaque: Bool = false, scale: CGFloat = 0, block: ContextBlock) -> UIImage {
+    class func with(size: CGSize, opaque: Bool = false, scale: CGFloat = 0, block: ContextBlock) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, opaque, scale)
         let context = UIGraphicsGetCurrentContext()!
         block(context)
@@ -554,11 +554,11 @@ public extension UIImage {
         return image ?? UIImage()
     }
     
-    public func with(size: CGSize, opaque: Bool = false, scale: CGFloat = 0, block: ContextBlock) -> UIImage {
+    func with(size: CGSize, opaque: Bool = false, scale: CGFloat = 0, block: ContextBlock) -> UIImage {
         return self + UIImage.with(size:size,opaque:opaque,scale:scale,block:block)
     }
     
-    public func with(_ block: ContextBlock) -> UIImage {
+    func with(_ block: ContextBlock) -> UIImage {
         return UIImage.with(size: self.size, opaque: false, scale: self.scale) { context in
             let rect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
             self.draw(in: rect)
@@ -566,7 +566,7 @@ public extension UIImage {
         }
     }
     
-    public func with(color: UIColor) -> UIImage {
+    func with(color: UIColor) -> UIImage {
         return UIImage.with(size: self.size) { context in
             context.translateBy(x: 0, y: self.size.height)
             context.scaleBy(x: 1, y: -1)
@@ -578,17 +578,17 @@ public extension UIImage {
         }
     }
     
-    public class func size(width: CGFloat, height: CGFloat) -> TGImagePresenter {
+    class func size(width: CGFloat, height: CGFloat) -> TGImagePresenter {
         return self.size(CGSize(width: width, height: height))
     }
     
-    public class func size(_ size: CGSize) -> TGImagePresenter {
+    class func size(_ size: CGSize) -> TGImagePresenter {
         let drawer = TGImagePresenter()
         drawer.size = .fixed(size)
         return drawer
     }
     
-    public class func resizable() -> TGImagePresenter {
+    class func resizable() -> TGImagePresenter {
         let drawer = TGImagePresenter()
         drawer.size = .resizable
         return drawer
@@ -598,7 +598,7 @@ public extension UIImage {
         static var TGImagePositionKey = "TGImagePositionKey"
     }
     
-    public var position: CGPoint{
+    var position: CGPoint{
         get {
             return objc_getAssociatedObject(self, &AssociatedKeys.TGImagePositionKey) as? CGPoint ?? CGPoint.zero
         }
@@ -611,7 +611,7 @@ public extension UIImage {
         }
     }
     
-    public func position(_ point:CGPoint) -> UIImage{
+    func position(_ point:CGPoint) -> UIImage{
         self.position = point
         return self
     }

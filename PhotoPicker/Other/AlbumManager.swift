@@ -69,7 +69,7 @@ class AlbumManager {
         didSet {
             if oldValue.count > selectedFetch.count {
                 
-                let changed = oldValue.filter { selectedFetch.index(of: $0) == nil }
+                let changed = oldValue.filter { selectedFetch.firstIndex(of: $0) == nil }
                 
                 NotificationCenter.default.post(name: AlbumManager.albumSelectedFetchDidChanged, object: nil, userInfo: [
                     AlbumManager.albumSelectedFetchChangedKey : AlbumSelectedFetchChanged.decrease,
@@ -113,7 +113,7 @@ class AlbumManager {
     }
     
     func index(of asset: PHAsset) -> Int? {
-        return selectedFetch.index(of: asset)
+        return selectedFetch.firstIndex(of: asset)
     }
     
     func clear() {

@@ -132,10 +132,16 @@ open class PhotoPickerManager: NSObject {
     
     
     var selectedCallback: (([PhotoPickerManagerMediaItem])->())?
-
+    
     weak public var delegate: PhotoPickerManagerDelegate? = nil
     
-    fileprivate(set) var navigationController: PhototPickerNavigationController?
+    fileprivate(set) var navigationController: PhototPickerNavigationController? {
+        didSet {
+            if let _ = oldValue?.view.window {
+                oldValue?.dismiss(animated: false, completion: nil)
+            }
+        }
+    }
     weak fileprivate(set) var preViewController: UIViewController? = nil
     
     deinit {
@@ -178,7 +184,7 @@ extension PhotoPickerManager {
                 let naviVC = PhototPickerNavigationController(rootViewController: PhototPickerEmptyViewController(style: PHPhotoLibrary.authorizationStatus().enableState))
                 self.navigationController = naviVC
             }
-           
+            
             preViewController?.present(self.navigationController!, animated: true, completion: nil)
             return
         }
@@ -205,39 +211,44 @@ extension PhotoPickerManager {
 extension PhotoPickerManager {
     
     func setCamera() {
-
-        let navvc: PhototPickerNavigationController
+        
+        let navvc: PhototPickerNavigationController =  navigationController ?? PhototPickerNavigationController(rootViewController: UIViewController())
         if UIImagePickerController.isCameraDeviceAvailable(.rear) { // 判断相机是否可用
-            switch (AVCaptureDevice.authorizationStatus(for: .audio), AVCaptureDevice.authorizationStatus(for: .video)) { // 判断是否有权限
-            case (.authorized, .authorized):
-                navvc = PhototPickerNavigationController(rootViewController: CameraViewController(type: options.allowFileType))
-            case (.notDetermined, _):
-                navvc = PhototPickerNavigationController(rootViewController: PhototPickerEmptyViewController(style: .cameraReject))
-                AVCaptureDevice.requestAccess(for: .audio) {
-                    if $0 && AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
-                        navvc.setViewControllers([CameraViewController(type: self.options.allowFileType)], animated: true)
+            let audioAllow = AVCaptureDevice.authorizationStatus(for: .audio)
+            let videoAllow = AVCaptureDevice.authorizationStatus(for: .video)
+            
+            switch videoAllow {
+            case .authorized:
+                if audioAllow == .authorized {
+                    navvc.setViewControllers([CameraViewController(type: self.options.allowFileType)], animated: true)
+                } else if audioAllow == .notDetermined {
+                    AVCaptureDevice.requestAccess(for: .audio) { allow in
+                        DispatchQueue.main.async {
+                            self.setCamera()
+                        }
+                    }
+                    return
+                } else {
+                    navvc.setViewControllers([PhototPickerEmptyViewController(style: .cameraReject)], animated: true)
+                }
+            case .notDetermined:
+                AVCaptureDevice.requestAccess(for: .video) { allow in
+                    DispatchQueue.main.async {
+                        self.setCamera()
                     }
                 }
-            case (_, .notDetermined):
-                navvc = PhototPickerNavigationController(rootViewController: PhototPickerEmptyViewController(style: .cameraReject))
-                AVCaptureDevice.requestAccess(for: .video) {
-                    if $0 && AVCaptureDevice.authorizationStatus(for: .audio) == .authorized {
-                        navvc.setViewControllers([CameraViewController(type: self.options.allowFileType)], animated: true)
-                    }
-                }
-            case (_, .restricted), (.restricted, _):
-                navvc = PhototPickerNavigationController(rootViewController: PhototPickerEmptyViewController(style: .cameraReject))
-            default:
-                navvc = PhototPickerNavigationController(rootViewController: PhototPickerEmptyViewController(style: .cameraDisable))
+                return
+            case .restricted, .denied:
+                navvc.setViewControllers([PhototPickerEmptyViewController(style: .cameraReject)], animated: true)
+            @unknown default:
+                navvc.setViewControllers([PhototPickerEmptyViewController(style: .cameraReject)], animated: true)
             }
         } else {
-            navvc = PhototPickerNavigationController(rootViewController: PhototPickerEmptyViewController(style: .cameraDisable))
+            navvc.setViewControllers([PhototPickerEmptyViewController(style: .cameraReject)], animated: true)
         }
-
+        
         navigationController = navvc
-        if navigationController?.view.window == nil {
-            preViewController?.present(navigationController!, animated: true, completion: nil)
-        }
+        preViewController?.present(navigationController!, animated: true, completion: nil)
     }
     
 }
@@ -273,6 +284,6 @@ extension PhotoPickerManager.InfoKey {
     public static let livePhoto: PhotoPickerManager.InfoKey = PhotoPickerManager.InfoKey.init(rawValue: "livePhoto")// a PHLivePhoto
     
     public static let phAsset: PhotoPickerManager.InfoKey = PhotoPickerManager.InfoKey.init(rawValue: "phAsset") // a PHAsset
-        
+    
     static let index: PhotoPickerManager.InfoKey = PhotoPickerManager.InfoKey.init(rawValue: "index") // an Int
 }

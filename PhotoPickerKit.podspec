@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "PhotoPickerKit"
-  s.version      = "0.4.2.4"
+  s.version      = "0.5.0"
   s.summary      = "Image selector"
 
   s.description  = <<-DESC
@@ -23,7 +23,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/121372288/PhotoPicker.git", :tag => s.version }
 
-  s.swift_version = "4.2"
+  s.swift_version = "5.0"
 
   s.source_files  = ["PhotoPicker/**/*.swift", "PhotoPicker/*.swift", "PhotoPicker/PhotoPicker.h"]
   s.public_header_files = ["PhotoPicker/PhotoPicker.h"]

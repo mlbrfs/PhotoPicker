@@ -101,6 +101,8 @@ extension PHAuthorizationStatus {
             return .waitAuthorization
         case .restricted:
             return .userReject
+        default:
+            return .cameraReject
         }
         
     }

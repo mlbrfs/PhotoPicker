@@ -137,7 +137,7 @@ extension Collection where Iterator.Element == PhotoPickerOptionsItem {
 
 public extension Collection where Iterator.Element == PhotoPickerOptionsItem {
     
-    public var allowFileType: FileType {
+    var allowFileType: FileType {
         if let item = lastMatchIgnoringAssociatedValue(.allowType(.all)),
             case .allowType(let fileType) = item
         {
@@ -146,7 +146,7 @@ public extension Collection where Iterator.Element == PhotoPickerOptionsItem {
         return .all
     }
     
-    public var isAscending: Bool {
+    var isAscending: Bool {
         if let item = lastMatchIgnoringAssociatedValue(.ascending(false)),
             case .ascending(let isAscending) = item
         {
@@ -155,7 +155,7 @@ public extension Collection where Iterator.Element == PhotoPickerOptionsItem {
         return false
     }
     
-    public var indicatorPosition: PhotoIndicatorPosition {
+    var indicatorPosition: PhotoIndicatorPosition {
         if let item = lastMatchIgnoringAssociatedValue(.photoIndicatorPosition(.topRight)),
             case .photoIndicatorPosition(let indicatorPosition) = item
         {
@@ -163,7 +163,7 @@ public extension Collection where Iterator.Element == PhotoPickerOptionsItem {
         }
         return .topRight
     }
-    public var indicatorStyle: PhotoIndicatorStyle {
+    var indicatorStyle: PhotoIndicatorStyle {
         if let item = lastMatchIgnoringAssociatedValue(.photoIndicatorStyle(.circular)),
             case .photoIndicatorStyle(let indicatorStyle) = item
         {
@@ -173,7 +173,7 @@ public extension Collection where Iterator.Element == PhotoPickerOptionsItem {
     }
     
     
-    public var isAlbumSmartCollections: Bool {
+    var isAlbumSmartCollections: Bool {
         if let item = lastMatchIgnoringAssociatedValue(.isUseCustomSmartCollections(false)),
             case .isUseCustomSmartCollections(let isUseCustomSmartCollections) = item
         {
@@ -181,7 +181,7 @@ public extension Collection where Iterator.Element == PhotoPickerOptionsItem {
         }
         return false
     }
-    public var tintColor: UIColor {
+    var tintColor: UIColor {
         if let item = lastMatchIgnoringAssociatedValue(.tintColor(UIColor.tint)),
             case .tintColor(let tintColor) = item
         {
@@ -190,7 +190,7 @@ public extension Collection where Iterator.Element == PhotoPickerOptionsItem {
         return UIColor.tint
     }
     
-    public var displayMode: DisplayMode {
+    var displayMode: DisplayMode {
         if let item = lastMatchIgnoringAssociatedValue(.displayMode(.recent)),
             case .displayMode(let displayMode) = item
         {
@@ -199,7 +199,7 @@ public extension Collection where Iterator.Element == PhotoPickerOptionsItem {
         return .recent
     }
     
-    public var textColor: UIColor {
+    var textColor: UIColor {
         if let item = lastMatchIgnoringAssociatedValue(.textColor(UIColor.tint)),
             case .textColor(let textColor) = item
         {
@@ -208,7 +208,7 @@ public extension Collection where Iterator.Element == PhotoPickerOptionsItem {
         return UIColor.text
     }
     
-    public var barColor: UIColor {
+    var barColor: UIColor {
         if let item = lastMatchIgnoringAssociatedValue(.barColor(UIColor.tint)),
             case .barColor(let barColor) = item
         {
@@ -217,7 +217,7 @@ public extension Collection where Iterator.Element == PhotoPickerOptionsItem {
         return UIColor.bar
     }
     
-    public var optionsAllowed: Int {
+    var optionsAllowed: Int {
         if let item = lastMatchIgnoringAssociatedValue(.optionsAllowed(9)),
             case .optionsAllowed(let optionsAllowed) = item
         {
@@ -226,7 +226,7 @@ public extension Collection where Iterator.Element == PhotoPickerOptionsItem {
         return 9
     }
     
-    public var statusBarStyle: UIStatusBarStyle {
+    var statusBarStyle: UIStatusBarStyle {
         if let item = lastMatchIgnoringAssociatedValue(.statusBarStyle(.lightContent)),
             case .statusBarStyle(let statusBarStyle) = item
         {
@@ -235,7 +235,7 @@ public extension Collection where Iterator.Element == PhotoPickerOptionsItem {
         return .lightContent
     }
     
-    public var compressRate: Double {
+    var compressRate: Double {
         if let item = lastMatchIgnoringAssociatedValue(.compressRate(0.25)),
             case .compressRate(let compressRate) = item
         {
@@ -243,7 +243,7 @@ public extension Collection where Iterator.Element == PhotoPickerOptionsItem {
         }
         return 0.25
     }
-    public var autoDismiss: Bool {
+    var autoDismiss: Bool {
         if let item = lastMatchIgnoringAssociatedValue(.autoDismiss(true)),
             case .autoDismiss(let autoDismiss) = item
         {
@@ -252,7 +252,7 @@ public extension Collection where Iterator.Element == PhotoPickerOptionsItem {
         return true
     }
     
-    public var allowVideoSize: (min: TimeInterval, max: TimeInterval) {
+    var allowVideoSize: (min: TimeInterval, max: TimeInterval) {
         if let item = lastMatchIgnoringAssociatedValue(.allowVideoSize(min: 1, max: 30)),
             case .allowVideoSize(let allowVideoSize) = item
         {
